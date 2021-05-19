@@ -8,9 +8,7 @@
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('vue')) :
   typeof define === 'function' && define.amd ? define(['vue'], factory) :
   (global = global || self, global.VirtualList = factory(global.Vue));
-}(this, (function (Vue) { 'use strict';
-
-  var Vue__default = 'default' in Vue ? Vue['default'] : Vue;
+}(this, (function (vue) { 'use strict';
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -645,7 +643,8 @@
     }
   }; // wrapping for item
 
-  var Item = Vue__default.component('virtual-list-item', {
+  var Item = vue.defineComponent({
+    name: 'virtual-list-item',
     mixins: [Wrapper],
     props: ItemProps,
     render: function render(h) {
@@ -676,13 +675,14 @@
     }
   }); // wrapping for slot
 
-  var Slot = Vue__default.component('virtual-list-slot', {
+  var Slot = vue.defineComponent({
+    name: 'virtual-list-slot',
     mixins: [Wrapper],
     props: SlotProps,
-    render: function render(h) {
+    render: function render() {
       var tag = this.tag,
           uniqueKey = this.uniqueKey;
-      return h(tag, {
+      return vue.h(tag, {
         key: uniqueKey,
         attrs: {
           role: uniqueKey
@@ -703,7 +703,7 @@
     // string value also use for aria role attribute
     FOOTER: 'tfoot'
   };
-  var VirtualList = Vue.defineComponent({
+  var VirtualList = vue.defineComponent({
     name: 'virtual-list',
     props: VirtualProps,
     data: function data() {
