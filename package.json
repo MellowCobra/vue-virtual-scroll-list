@@ -36,6 +36,7 @@
   "devDependencies": {
     "@babel/core": "^7.8.7",
     "@babel/preset-env": "^7.8.7",
+    "@vue/compiler-sfc": "^3.0.11",
     "@vue/test-utils": "^1.0.0-beta.33",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^25.5.1",
@@ -50,8 +51,9 @@
     "jest": "^25.5.1",
     "rollup": "^2.1.0",
     "rollup-plugin-babel": "^4.4.0",
-    "vue": "^2.6.11",
+    "vue": "^3.0.0",
     "vue-jest": "^3.0.5",
+    "vue-loader": "^16.2.0",
     "vue-template-compiler": "^2.6.11"
   }
 }
